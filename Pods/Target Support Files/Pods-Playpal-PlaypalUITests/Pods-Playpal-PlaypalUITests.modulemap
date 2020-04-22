@@ -1,0 +1,6 @@
+framework module Pods_Playpal_PlaypalUITests {
+  umbrella header "Pods-Playpal-PlaypalUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		316BF0CA4A80EC8A5B740D23 /* Pods_Playpal_PlaypalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67109FF365FD33E404A8C6E0 /* Pods_Playpal_PlaypalUITests.framework */; };
+		626F76D1E830E62A373A6311 /* Pods_PlaypalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B5402344B746F7651D55B /* Pods_PlaypalTests.framework */; };
+		8E6C3C0B244D305400D8E853 /* DogProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6C3C0A244D305400D8E853 /* DogProfileViewController.swift */; };
+		8E8E3829244766C70028142C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E3828244766C70028142C /* SignUpViewController.swift */; };
+		8E8E382B244766DB0028142C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E382A244766DB0028142C /* LoginViewController.swift */; };
+		8E8E382D244766E30028142C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E382C244766E30028142C /* HomeViewController.swift */; };
 		8EB3C1EC24467D07006D5506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3C1EB24467D07006D5506 /* AppDelegate.swift */; };
 		8EB3C1EE24467D07006D5506 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3C1ED24467D07006D5506 /* SceneDelegate.swift */; };
 		8EB3C1F024467D07006D5506 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3C1EF24467D07006D5506 /* ViewController.swift */; };
@@ -15,6 +21,11 @@
 		8EB3C1F824467D09006D5506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB3C1F624467D09006D5506 /* LaunchScreen.storyboard */; };
 		8EB3C20324467D0A006D5506 /* PlaypalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3C20224467D0A006D5506 /* PlaypalTests.swift */; };
 		8EB3C20E24467D0A006D5506 /* PlaypalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3C20D24467D0A006D5506 /* PlaypalUITests.swift */; };
+		8EB3C21C24467D4D006D5506 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */; };
+		8EB6CB202447EDC300770270 /* SignIn.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB6CB1F2447EDC300770270 /* SignIn.xcassets */; };
+		8EB6CB222447F01800770270 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6CB212447F01800770270 /* Utilities.swift */; };
+		8EDCC36E24477D2100FB7513 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCC36D24477D2100FB7513 /* constants.swift */; };
+		ED79F3CFF1935BA7A900C4B9 /* Pods_Playpal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD295D2B44843328A1FFE33 /* Pods_Playpal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		131964D94DB35DEF512FA9CD /* Pods-Playpal-PlaypalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playpal-PlaypalUITests.release.xcconfig"; path = "Target Support Files/Pods-Playpal-PlaypalUITests/Pods-Playpal-PlaypalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		187B5402344B746F7651D55B /* Pods_PlaypalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaypalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FB5CE2CBB5031A8EE99CBD /* Pods-Playpal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playpal.debug.xcconfig"; path = "Target Support Files/Pods-Playpal/Pods-Playpal.debug.xcconfig"; sourceTree = "<group>"; };
+		359BA79D804C2FE861B78A44 /* Pods-Playpal-PlaypalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playpal-PlaypalUITests.debug.xcconfig"; path = "Target Support Files/Pods-Playpal-PlaypalUITests/Pods-Playpal-PlaypalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		41F2CBD812CA71CC89902B91 /* Pods-Playpal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playpal.release.xcconfig"; path = "Target Support Files/Pods-Playpal/Pods-Playpal.release.xcconfig"; sourceTree = "<group>"; };
+		67109FF365FD33E404A8C6E0 /* Pods_Playpal_PlaypalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playpal_PlaypalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6C3C0A244D305400D8E853 /* DogProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogProfileViewController.swift; sourceTree = "<group>"; };
+		8E8E3828244766C70028142C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8E8E382A244766DB0028142C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8E8E382C244766E30028142C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8EB3C1E824467D07006D5506 /* Playpal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playpal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB3C1EB24467D07006D5506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EB3C1ED24467D07006D5506 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +70,13 @@
 		8EB3C20924467D0A006D5506 /* PlaypalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaypalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB3C20D24467D0A006D5506 /* PlaypalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaypalUITests.swift; sourceTree = "<group>"; };
 		8EB3C20F24467D0A006D5506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EB6CB1F2447EDC300770270 /* SignIn.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SignIn.xcassets; sourceTree = "<group>"; };
+		8EB6CB212447F01800770270 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8EDCC36D24477D2100FB7513 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		94AF73B4B4254EA68EFFB148 /* Pods-PlaypalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaypalTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaypalTests/Pods-PlaypalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDD295D2B44843328A1FFE33 /* Pods_Playpal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playpal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64A3958C5870BCF7C785CBE /* Pods-PlaypalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaypalTests.release.xcconfig"; path = "Target Support Files/Pods-PlaypalTests/Pods-PlaypalTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED79F3CFF1935BA7A900C4B9 /* Pods_Playpal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626F76D1E830E62A373A6311 /* Pods_PlaypalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +100,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316BF0CA4A80EC8A5B740D23 /* Pods_Playpal_PlaypalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A76570882971B812651C643 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDD295D2B44843328A1FFE33 /* Pods_Playpal.framework */,
+				67109FF365FD33E404A8C6E0 /* Pods_Playpal_PlaypalUITests.framework */,
+				187B5402344B746F7651D55B /* Pods_PlaypalTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82AD070B4736C9BD1F319566 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19FB5CE2CBB5031A8EE99CBD /* Pods-Playpal.debug.xcconfig */,
+				41F2CBD812CA71CC89902B91 /* Pods-Playpal.release.xcconfig */,
+				359BA79D804C2FE861B78A44 /* Pods-Playpal-PlaypalUITests.debug.xcconfig */,
+				131964D94DB35DEF512FA9CD /* Pods-Playpal-PlaypalUITests.release.xcconfig */,
+				94AF73B4B4254EA68EFFB148 /* Pods-PlaypalTests.debug.xcconfig */,
+				F64A3958C5870BCF7C785CBE /* Pods-PlaypalTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E8E382E244766EC0028142C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EB3C1EF24467D07006D5506 /* ViewController.swift */,
+				8E8E3828244766C70028142C /* SignUpViewController.swift */,
+				8E8E382A244766DB0028142C /* LoginViewController.swift */,
+				8E8E382C244766E30028142C /* HomeViewController.swift */,
+				8E6C3C0A244D305400D8E853 /* DogProfileViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8EB3C1DF24467D07006D5506 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +149,8 @@
 				8EB3C20124467D0A006D5506 /* PlaypalTests */,
 				8EB3C20C24467D0A006D5506 /* PlaypalUITests */,
 				8EB3C1E924467D07006D5506 /* Products */,
+				82AD070B4736C9BD1F319566 /* Pods */,
+				4A76570882971B812651C643 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +167,16 @@
 		8EB3C1EA24467D07006D5506 /* Playpal */ = {
 			isa = PBXGroup;
 			children = (
+				8EC278D72447EB3F0064249E /* Helpers */,
+				8E8E382E244766EC0028142C /* View Controllers */,
 				8EB3C1EB24467D07006D5506 /* AppDelegate.swift */,
 				8EB3C1ED24467D07006D5506 /* SceneDelegate.swift */,
-				8EB3C1EF24467D07006D5506 /* ViewController.swift */,
 				8EB3C1F124467D07006D5506 /* Main.storyboard */,
+				8EB6CB1F2447EDC300770270 /* SignIn.xcassets */,
 				8EB3C1F424467D09006D5506 /* Assets.xcassets */,
 				8EB3C1F624467D09006D5506 /* LaunchScreen.storyboard */,
 				8EB3C1F924467D09006D5506 /* Info.plist */,
+				8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */,
 			);
 			path = Playpal;
 			sourceTree = "<group>";
@@ -128,6 +199,15 @@
 			path = PlaypalUITests;
 			sourceTree = "<group>";
 		};
+		8EC278D72447EB3F0064249E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8EDCC36D24477D2100FB7513 /* constants.swift */,
+				8EB6CB212447F01800770270 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EB3C21224467D0A006D5506 /* Build configuration list for PBXNativeTarget "Playpal" */;
 			buildPhases = (
+				6B1B6E8282649185D3FDA303 /* [CP] Check Pods Manifest.lock */,
 				8EB3C1E424467D07006D5506 /* Sources */,
 				8EB3C1E524467D07006D5506 /* Frameworks */,
 				8EB3C1E624467D07006D5506 /* Resources */,
+				2DA1BD3EB86F4C971CE1A2E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EB3C21524467D0A006D5506 /* Build configuration list for PBXNativeTarget "PlaypalTests" */;
 			buildPhases = (
+				F8E20A25702B00E4879EEF72 /* [CP] Check Pods Manifest.lock */,
 				8EB3C1FA24467D0A006D5506 /* Sources */,
 				8EB3C1FB24467D0A006D5506 /* Frameworks */,
 				8EB3C1FC24467D0A006D5506 /* Resources */,
@@ -170,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EB3C21824467D0A006D5506 /* Build configuration list for PBXNativeTarget "PlaypalUITests" */;
 			buildPhases = (
+				E09002C79D170A3653D3C476 /* [CP] Check Pods Manifest.lock */,
 				8EB3C20524467D0A006D5506 /* Sources */,
 				8EB3C20624467D0A006D5506 /* Frameworks */,
 				8EB3C20724467D0A006D5506 /* Resources */,
+				F832904DBC5C59302843437D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB3C1F824467D09006D5506 /* LaunchScreen.storyboard in Resources */,
+				8EB3C21C24467D4D006D5506 /* GoogleService-Info.plist in Resources */,
 				8EB3C1F524467D09006D5506 /* Assets.xcassets in Resources */,
+				8EB6CB202447EDC300770270 /* SignIn.xcassets in Resources */,
 				8EB3C1F324467D07006D5506 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +341,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2DA1BD3EB86F4C971CE1A2E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Playpal/Pods-Playpal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Playpal/Pods-Playpal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Playpal/Pods-Playpal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B1B6E8282649185D3FDA303 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Playpal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E09002C79D170A3653D3C476 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Playpal-PlaypalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F832904DBC5C59302843437D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Playpal-PlaypalUITests/Pods-Playpal-PlaypalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Playpal-PlaypalUITests/Pods-Playpal-PlaypalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Playpal-PlaypalUITests/Pods-Playpal-PlaypalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8E20A25702B00E4879EEF72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaypalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8EB3C1E424467D07006D5506 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,7 +451,13 @@
 			files = (
 				8EB3C1F024467D07006D5506 /* ViewController.swift in Sources */,
 				8EB3C1EC24467D07006D5506 /* AppDelegate.swift in Sources */,
+				8E8E3829244766C70028142C /* SignUpViewController.swift in Sources */,
+				8EDCC36E24477D2100FB7513 /* constants.swift in Sources */,
+				8E6C3C0B244D305400D8E853 /* DogProfileViewController.swift in Sources */,
+				8E8E382B244766DB0028142C /* LoginViewController.swift in Sources */,
 				8EB3C1EE24467D07006D5506 /* SceneDelegate.swift in Sources */,
+				8EB6CB222447F01800770270 /* Utilities.swift in Sources */,
+				8E8E382D244766E30028142C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +628,7 @@
 		};
 		8EB3C21324467D0A006D5506 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FB5CE2CBB5031A8EE99CBD /* Pods-Playpal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +646,7 @@
 		};
 		8EB3C21424467D0A006D5506 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41F2CBD812CA71CC89902B91 /* Pods-Playpal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +664,7 @@
 		};
 		8EB3C21624467D0A006D5506 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AF73B4B4254EA68EFFB148 /* Pods-PlaypalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +686,7 @@
 		};
 		8EB3C21724467D0A006D5506 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F64A3958C5870BCF7C785CBE /* Pods-PlaypalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +708,7 @@
 		};
 		8EB3C21924467D0A006D5506 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 359BA79D804C2FE861B78A44 /* Pods-Playpal-PlaypalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +728,7 @@
 		};
 		8EB3C21A24467D0A006D5506 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131964D94DB35DEF512FA9CD /* Pods-Playpal-PlaypalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
