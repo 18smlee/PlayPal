@@ -17,6 +17,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserModel.model.getCurrentUser { (user) in
+            self.dogProfileLabel.text = "\(user.pupName)'s Profile"
+        }
+        
         setUpElements()    }
     
 

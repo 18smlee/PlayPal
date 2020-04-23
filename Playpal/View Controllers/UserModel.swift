@@ -41,75 +41,55 @@ class UserModel {
         let id = Auth.auth().currentUser!.uid
         return id
     }
-
+    
     
     /** Gets the current User object for the specified user id */
     func getCurrentUser(_ completion: @escaping (User) -> Void) {
         CURRENT_USER_REF.observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             let email = snapshot.childSnapshot(forPath: "email").value as! String
+            let firstName = snapshot.childSnapshot(forPath: "firstName").value as! String
+            let lastName = snapshot.childSnapshot(forPath: "lastName").value as! String
+            let hometown = snapshot.childSnapshot(forPath: "hometown").value as! String
+            let pupName = snapshot.childSnapshot(forPath: "pupName").value as! String
+            let breed = snapshot.childSnapshot(forPath: "breed").value as! String
+            let size = snapshot.childSnapshot(forPath: "size").value as! String
+            let gender  = snapshot.childSnapshot(forPath: "gender").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            
+            completion(User(userEmail: email, userID: id, userFirstName: firstName, userLastName: lastName, userHometown: hometown, userPupName: pupName, userBreed: breed, userSize: size, userGender: gender))
         })
     }
     /** Gets the User object for the specified user id */
     func getUser(_ userID: String, completion: @escaping (User) -> Void) {
         USER_REF.child(userID).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
             let email = snapshot.childSnapshot(forPath: "email").value as! String
+            let firstName = snapshot.childSnapshot(forPath: "firstName").value as! String
+            let lastName = snapshot.childSnapshot(forPath: "lastName").value as! String
+            let hometown = snapshot.childSnapshot(forPath: "hometown").value as! String
+            let pupName = snapshot.childSnapshot(forPath: "pupName").value as! String
+            let breed = snapshot.childSnapshot(forPath: "breed").value as! String
+            let size = snapshot.childSnapshot(forPath: "size").value as! String
+            let gender  = snapshot.childSnapshot(forPath: "gender").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            
+            completion(User(userEmail: email, userID: id, userFirstName: firstName, userLastName: lastName, userHometown: hometown, userPupName: pupName, userBreed: breed, userSize: size, userGender: gender))
         })
     }
     
     
     
     // MARK: - Account Related
-    
-    /**
-     Creates a new user account with the specified email and password
-     - parameter completion: What to do when the block has finished running. The success variable
-     indicates whether or not the signup was a success
-     */
-    func createAccount(_ email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            
-            if (error == nil) {
-                // Success
-                var userInfo = [String: AnyObject]()
-                userInfo = ["email": email as AnyObject]
-                self.CURRENT_USER_REF.setValue(userInfo)
-            }
-            
-        })
+
+    func sendUserInfo(_ email: String?, _ firstName: String?, _ lastName: String?,_ hometown: String?,
+                      _ pupName: String?, _ breed: String?, _ size: String?, _ gender: String?) {
+      
+        var userInfo = [String: AnyObject]()
+        userInfo = ["email": email as AnyObject, "firstName": firstName as AnyObject,"lastName":lastName as AnyObject, "hometown":hometown as AnyObject, "pupName":pupName as AnyObject, "breed":breed as AnyObject, "size":size as AnyObject, "gender":gender as AnyObject]
+        self.CURRENT_USER_REF.setValue(userInfo)
+        
     }
-    
-    /**
-     Logs in an account with the specified email and password
-     
-     - parameter completion: What to do when the block has finished running. The success variable
-     indicates whether or not the login was a success
-     */
-    func loginAccount(_ email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            
-            if (error == nil) {
-                // Success
-                completion(true)
-            } else {
-                // Failure
-                completion(false)
-                print(error!)
-            }
-            
-        })
-    }
-    
-    /** Logs out an account */
-    func logoutAccount() {
-        try! Auth.auth().signOut()
-    }
-    
-    
-    
+
     // MARK: - Request System Functions
     
     /** Sends a friend request to the user with the specified id */
@@ -131,30 +111,37 @@ class UserModel {
         USER_REF.child(userID).child("requests").child(CURRENT_USER_ID).removeValue()
     }
     
-    
-    
     // MARK: - All users
-    /** The list of all users */
-    var userList = [User]()
-    /** Adds a user observer. The completion function will run every time this list changes, allowing you
-     to update your UI. */
-    func addUserObserver(_ update: @escaping () -> Void) {
-        UserModel.model.USER_REF.observe(DataEventType.value, with: { (snapshot) in
-            self.userList.removeAll()
-            for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let email = child.childSnapshot(forPath: "email").value as! String
-                if email != Auth.auth().currentUser?.email! {
-                    self.userList.append(User(userEmail: email, userID: child.key))
-                }
-            }
-            update()
-        })
-    }
-    /** Removes the user observer. This should be done when leaving the view that uses the observer. */
-    func removeUserObserver() {
-        USER_REF.removeAllObservers()
-    }
-    
+       /** The list of all users */
+       var userList = [User]()
+       /** Adds a user observer. The completion function will run every time this list changes, allowing you
+        to update your UI. */
+       func addUserObserver(_ update: @escaping () -> Void) {
+           UserModel.model.USER_REF.observe(DataEventType.value, with: { (snapshot) in
+               self.userList.removeAll()
+               for child in snapshot.children.allObjects as! [DataSnapshot] {
+
+                let email = snapshot.childSnapshot(forPath: "email").value as! String
+                let firstName = snapshot.childSnapshot(forPath: "firstName").value as! String
+                let lastName = snapshot.childSnapshot(forPath: "lastName").value as! String
+                let hometown = snapshot.childSnapshot(forPath: "hometown").value as! String
+                let pupName = snapshot.childSnapshot(forPath: "pupName").value as! String
+                let breed = snapshot.childSnapshot(forPath: "breed").value as! String
+                let size = snapshot.childSnapshot(forPath: "size").value as! String
+                let gender  = snapshot.childSnapshot(forPath: "gender").value as! String
+                let id = snapshot.key
+                
+                   if email != Auth.auth().currentUser?.email! {
+                       self.userList.append(User(userEmail: email, userID: id, userFirstName: firstName, userLastName: lastName, userHometown: hometown, userPupName: pupName, userBreed: breed, userSize: size, userGender: gender))
+                   }
+               }
+               update()
+           })
+       }
+       /** Removes the user observer. This should be done when leaving the view that uses the observer. */
+       func removeUserObserver() {
+           USER_REF.removeAllObservers()
+       }
     
     
     // MARK: - All friends

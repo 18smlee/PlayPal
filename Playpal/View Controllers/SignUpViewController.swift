@@ -72,14 +72,11 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     self.uploadDogProfileImage(dogImageData: self.dogImageData)
-//                        db.collection("users").addDocument(data: ["uid": result!.user.uid, "firstName":firstName, "lastName":lastName, "hometown":hometown, "pupName":pupName, "breed":breed, "size":self.size, "gender":self.gender, "dogImageURL":self.dogImageURL]) {(error) in
-//
-//                            if error != nil {
-//                                self.showError("Error saving user data")
-//                            }
-//
-                    UserModel.model.createAccount(email, password: password)
                     
+                    // fills database with user info
+                    UserModel.model.sendUserInfo(email, firstName, lastName, hometown, pupName, breed, self.size, self.gender)
+                    
+                    self.transitionToHome()
                 }
             }
         }
@@ -110,6 +107,7 @@ class SignUpViewController: UIViewController {
                     }
                 })
             } else {
+                print("error uploading picture")
                 print(error?.localizedDescription)
             }
         }
