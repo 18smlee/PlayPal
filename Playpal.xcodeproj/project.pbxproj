@@ -28,7 +28,9 @@
 		8EB3C21C24467D4D006D5506 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */; };
 		8EB6CB202447EDC300770270 /* SignIn.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB6CB1F2447EDC300770270 /* SignIn.xcassets */; };
 		8EB6CB222447F01800770270 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6CB212447F01800770270 /* Utilities.swift */; };
+		8EDB789D2451E42D001AC9E3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB789C2451E42D001AC9E3 /* UserModel.swift */; };
 		8EDCC36E24477D2100FB7513 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDCC36D24477D2100FB7513 /* constants.swift */; };
+		8EF803832451CC17003D5A60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF803822451CC17003D5A60 /* User.swift */; };
 		ED79F3CFF1935BA7A900C4B9 /* Pods_Playpal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD295D2B44843328A1FFE33 /* Pods_Playpal.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +83,9 @@
 		8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EB6CB1F2447EDC300770270 /* SignIn.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SignIn.xcassets; sourceTree = "<group>"; };
 		8EB6CB212447F01800770270 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8EDB789C2451E42D001AC9E3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8EDCC36D24477D2100FB7513 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		8EF803822451CC17003D5A60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94AF73B4B4254EA68EFFB148 /* Pods-PlaypalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaypalTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaypalTests/Pods-PlaypalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD295D2B44843328A1FFE33 /* Pods_Playpal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playpal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64A3958C5870BCF7C785CBE /* Pods-PlaypalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaypalTests.release.xcconfig"; path = "Target Support Files/Pods-PlaypalTests/Pods-PlaypalTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				8E5664AF244FE58B00D19443 /* MapViewController.swift */,
 				8E5664B1244FE5A200D19443 /* ProfileViewController.swift */,
 				8E5664B3244FFAA000D19443 /* PalsViewController.swift */,
+				8EDB789C2451E42D001AC9E3 /* UserModel.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				8EB3C1F624467D09006D5506 /* LaunchScreen.storyboard */,
 				8EB3C1F924467D09006D5506 /* Info.plist */,
 				8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */,
+				8EF803822451CC17003D5A60 /* User.swift */,
 			);
 			path = Playpal;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF803832451CC17003D5A60 /* User.swift in Sources */,
 				8EB3C1F024467D07006D5506 /* ViewController.swift in Sources */,
 				8EB3C1EC24467D07006D5506 /* AppDelegate.swift in Sources */,
 				8E5664B4244FFAA000D19443 /* PalsViewController.swift in Sources */,
@@ -469,6 +476,7 @@
 				8E5664B0244FE58B00D19443 /* MapViewController.swift in Sources */,
 				8EDCC36E24477D2100FB7513 /* constants.swift in Sources */,
 				8E6C3C0B244D305400D8E853 /* DogProfileViewController.swift in Sources */,
+				8EDB789D2451E42D001AC9E3 /* UserModel.swift in Sources */,
 				8E5664B2244FE5A200D19443 /* ProfileViewController.swift in Sources */,
 				8E8E382B244766DB0028142C /* LoginViewController.swift in Sources */,
 				8EB3C1EE24467D07006D5506 /* SceneDelegate.swift in Sources */,
