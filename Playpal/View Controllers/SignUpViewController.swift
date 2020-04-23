@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     
@@ -26,6 +27,8 @@ class SignUpViewController: UIViewController {
     var breedText: String?
     var size: String?
     var gender: String?
+    var dogImageData: Data?
+    var dogImageURL: URL?
     
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -37,10 +40,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pupNameText)
-        print(breedText)
-        print(size)
-        print(gender)
         self.navigationController?.isNavigationBarHidden = false
         setUpElements()
     }
@@ -72,21 +71,67 @@ class SignUpViewController: UIViewController {
                     self.showError(error?.localizedDescription ?? "Error creating user")
                     
                 } else {
+                    print("before")
+                    print(self.dogImageURL?.absoluteString)
                     
-                    let db = Firestore.firestore()
-                    print(pupName)
+                    let group = DispatchGroup()
+                    group.enter()
                     
-                    db.collection("users").addDocument(data: ["uid": result!.user.uid, "firstName":firstName, "lastName":lastName, "hometown":hometown, "pupName":pupName, "breed":breed, "size":self.size, "gender":self.gender ]) {(error) in
-                        
-                        if error != nil {
-                            self.showError("Error saving user data")
-                        }
-                        
+                    DispatchQueue.main.sync {
+                        // Upload the profile image to Firebase Storage
+                        self.uploadDogProfileImage(dogImageData: self.dogImageData)
+                        group.leave()
                     }
-                    self.transitionToHome()
+                    
+                    group.notify(queue: .main) {
+                        print("Simulation finished")
+                        print("after")
+                        print(self.dogImageURL?.absoluteString)
+                        let db = Firestore.firestore()
+                        
+                        db.collection("users").addDocument(data: ["uid": result!.user.uid, "firstName":firstName, "lastName":lastName, "hometown":hometown, "pupName":pupName, "breed":breed, "size":self.size, "gender":self.gender, "dogImageURL":self.dogImageURL]) {(error) in
+                            
+                            if error != nil {
+                                self.showError("Error saving user data")
+                            }
+                            
+                        }
+                        self.transitionToHome()
+                    }
                 }
             }
         }
+    }
+    
+    func uploadDogProfileImage(dogImageData: Data?) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        
+        storageRef.putData(self.dogImageData!, metadata: metadata) {(metadata, error) in
+            if error == nil, metadata != nil {
+                storageRef.downloadURL(completion: { (url, error) in
+                    if let metaImageURL = url {
+                        self.dogImageURL = metaImageURL
+                        print("-------")
+                        print(self.dogImageURL?.absoluteString)
+                        print("-------")
+                    } else {
+                        print("dogImageURL not set!")
+                        print(url)
+                    }
+                })
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+        
     }
     
     func showError(_ message: String) {

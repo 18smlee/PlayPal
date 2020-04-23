@@ -13,18 +13,23 @@ class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tabBar.barTintColor = UIColor(red: 200/200, green: 200/200, blue: 200/200, alpha: 1)
+        self.tabBarController?.selectedIndex = 1
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpNavBar() {
+        let mapController = UINavigationController(rootViewController: MapViewController())
+        mapController.tabBarItem.image = UIImage(named: "map_icon.png")
+        mapController.tabBarItem.selectedImage = UIImage(named: "selected_map_icon.png")
+        
+        let profileController = UINavigationController(rootViewController: ProfileViewController())
+        profileController.tabBarItem.image = UIImage(named: "dog_icon-1.png")
+        profileController.tabBarItem.selectedImage = UIImage(named: "selected_dog_icon.png")
+        
+        let palsController = UINavigationController(rootViewController: PalsViewController())
+        palsController.tabBarItem.image = UIImage(named: "pals_icon.png")
+        palsController.tabBarItem.selectedImage = UIImage(named: "selected_pals_icon.png")
     }
-    */
 
 }

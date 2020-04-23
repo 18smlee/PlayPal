@@ -27,6 +27,9 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var size: String?
     var gender: String?
     
+    @IBOutlet weak var dogProfileImageView: UIImageView!
+  
+    
     // picker functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,6 +66,25 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
+    // sets up dog profile image picker
+    func setUpDogProfile() {
+        dogProfileImageView.layer.cornerRadius = 40
+        dogProfileImageView.clipsToBounds = true
+        dogProfileImageView.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        dogProfileImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func presentPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        
+        self.present(picker, animated:  true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
@@ -72,15 +94,19 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         self.sizePicker.delegate = self
         self.sizePicker.dataSource = self
-        
         self.genderPicker.delegate = self
         self.genderPicker.dataSource = self
         
         sizeTF.inputView = sizePicker
         genderTF.inputView = genderPicker
         
+//        customizePicker(textField: sizeTF, picker: sizePicker)
+//        customizePicker(textField: genderTF, picker: genderPicker)
+//
+        // hides navigation controller
         self.navigationController?.isNavigationBarHidden = false
         
+        setUpDogProfile()
         setUpElements()
     }
     
@@ -91,9 +117,19 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
             suvc.breedText = breedTF.text
             suvc.size = sizeTF.text
             suvc.gender =  genderTF.text
+            
+            // extract image data before sending
+            guard let imageSelected = dogProfileImageView.image else {
+                showError("Please select your dog's profile picture")
+                return
+            }
+
+            guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
+                return
+            }
+            suvc.dogImageData = imageData
         }
     }
-    
     
     @IBAction func nextTapped(_ sender: Any) {
         
@@ -128,5 +164,45 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         Utilities.styleTextField(pupNameTF)
         Utilities.styleTextField(breedTF)
         Utilities.styleFilledButton(nextButton)
+    }
+    
+//    func customizePicker(textField: UITextField, picker : UIPickerView) {
+//        picker.backgroundColor = .white
+//
+//        picker.showsSelectionIndicator = true
+//        picker.delegate = self
+//        picker.dataSource = self
+//
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = UIBarStyle.default
+//        toolBar.isTranslucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        toolBar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("donePicker")))
+//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//
+//        toolBar.setItems([spaceButton, doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//
+//        textField.inputView = picker
+//        textField.inputAccessoryView = toolBar
+//    }
+//    func donePicker(textField: UITextField) {
+//        textField.resignFirstResponder()
+//    }
+}
+
+extension DogProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            dogProfileImageView.image = imageSelected
+        }
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dogProfileImageView.image = imageOriginal
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
