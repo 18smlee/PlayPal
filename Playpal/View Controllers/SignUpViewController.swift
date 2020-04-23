@@ -71,34 +71,15 @@ class SignUpViewController: UIViewController {
                     self.showError(error?.localizedDescription ?? "Error creating user")
                     
                 } else {
-                    print("before")
-                    print(self.dogImageURL?.absoluteString)
-                    
-//                    let group = DispatchGroup()
-//                    group.enter()
-//
-//                    DispatchQueue.main.sync {
-                        // Upload the profile image to Firebase Storage
-                        self.uploadDogProfileImage(dogImageData: self.dogImageData)
-//                        group.leave()
-//                    }
-                    
-//                    group.notify(queue: .main) {
-                        print("Simulation finished")
-                        print("after")
-                        print(self.dogImageURL?.absoluteString)
-//                        let db = Firestore.firestore()
-//
+                    self.uploadDogProfileImage(dogImageData: self.dogImageData)
 //                        db.collection("users").addDocument(data: ["uid": result!.user.uid, "firstName":firstName, "lastName":lastName, "hometown":hometown, "pupName":pupName, "breed":breed, "size":self.size, "gender":self.gender, "dogImageURL":self.dogImageURL]) {(error) in
 //
 //                            if error != nil {
 //                                self.showError("Error saving user data")
 //                            }
 //
-//                        }
-                    UserModel.model.createUser(uid: result!.user.uid, firstName: firstName, lastName: lastName, hometown: hometown, pupName: pupName, breed: breed, size: self.size, gender: self.gender, dogImageURL: self.dogImageURL)
-                        self.transitionToHome()
-//                    }
+                    UserModel.model.createAccount(email, password: password)
+                    
                 }
             }
         }

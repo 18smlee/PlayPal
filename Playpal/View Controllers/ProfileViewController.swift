@@ -16,8 +16,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(UserModel.model.getDogName())
-    }
+        
+        setUpElements()    }
     
 
     @IBAction func logout(_ sender: Any) {

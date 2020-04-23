@@ -62,8 +62,8 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "uploadDogProfileImage(dogImageData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "uploadDogProfileImage(dogImageData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,89 +94,9 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "uploadDogProfileImage(dogImageData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CDF3AA13-152C-442A-91F0-60F2D67A003D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Playpal/View Controllers/UserModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getDogName()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CDF3AA13-152C-442A-91F0-60F2D67A003D - 9a93e834c20bb966"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Playpal.UserModel.getDogName() -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Playpal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samanthalee/OneDrive%20-%20PennO365/CIS%20195/apps/Playpal_app/Playpal/Playpal/View%20Controllers/UserModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "364">
-               </Location>
-               <Location
-                  uuid = "CDF3AA13-152C-442A-91F0-60F2D67A003D - 9a7a556971c07ef9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Playpal.UserModel.getDogName() -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Playpal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samanthalee/OneDrive%20-%20PennO365/CIS%20195/apps/Playpal_app/Playpal/Playpal/View%20Controllers/UserModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "160">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E5B14121-C22F-438F-A051-78601B259F3E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Playpal/View Controllers/UserModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getDogName()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3628992B-5BA1-4F96-99E0-73EE0F135C89"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Playpal/View Controllers/UserModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getDogName()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

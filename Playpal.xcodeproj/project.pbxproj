@@ -147,6 +147,8 @@
 		8E8E382E244766EC0028142C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EF803822451CC17003D5A60 /* User.swift */,
+				8EDB789C2451E42D001AC9E3 /* UserModel.swift */,
 				8EB3C1EF24467D07006D5506 /* ViewController.swift */,
 				8E8E3828244766C70028142C /* SignUpViewController.swift */,
 				8E8E382A244766DB0028142C /* LoginViewController.swift */,
@@ -155,7 +157,6 @@
 				8E5664AF244FE58B00D19443 /* MapViewController.swift */,
 				8E5664B1244FE5A200D19443 /* ProfileViewController.swift */,
 				8E5664B3244FFAA000D19443 /* PalsViewController.swift */,
-				8EDB789C2451E42D001AC9E3 /* UserModel.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,7 +196,6 @@
 				8EB3C1F624467D09006D5506 /* LaunchScreen.storyboard */,
 				8EB3C1F924467D09006D5506 /* Info.plist */,
 				8EB3C21B24467D4D006D5506 /* GoogleService-Info.plist */,
-				8EF803822451CC17003D5A60 /* User.swift */,
 			);
 			path = Playpal;
 			sourceTree = "<group>";
