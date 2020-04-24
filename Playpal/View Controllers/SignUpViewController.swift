@@ -58,24 +58,14 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
         setUpElements()
     }
     
-    private func configureLocationManager(){
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.distanceFilter = kCLDistanceFilterNone
-        manager.pausesLocationUpdatesAutomatically = false
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-    }
-    
     @IBAction func signUpTapped(_ sender: Any) {
         
         // Validate the fields
         let error = validateFields()
         
         if error != nil {
-            print("not working")
             showError(error!)
         } else {
-            print("working")
             // Create cleaned versions of data
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -94,7 +84,6 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 
                 if error != nil {
-                    print(error?.localizedDescription)
                     self.showError(error?.localizedDescription ?? "Error creating user")
                     
                 } else {
@@ -116,7 +105,16 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    
     //MARK: LocationManager Delegate Methods
+    
+    private func configureLocationManager(){
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.pausesLocationUpdatesAutomatically = false
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+    }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -127,12 +125,10 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
         print("Location Error:\(error.localizedDescription)")
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         let updatedLocation:CLLocation = locations.first!
         
         let newCoordinate: CLLocationCoordinate2D = updatedLocation.coordinate
@@ -167,7 +163,6 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 })
             } else {
-                print("error uploading picture")
                 print(error?.localizedDescription)
             }
         }
@@ -219,11 +214,11 @@ class SignUpViewController: UIViewController, CLLocationManagerDelegate {
         errorLabel.alpha = 0;
         
         // Style the elements
-        Utilities.styleTextField(firstNameTextField)
-        Utilities.styleTextField(lastNameTextField)
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(hometownTextField)
-        Utilities.styleTextField(passwordTextField)
+//        Utilities.styleTextField(firstNameTextField)
+//        Utilities.styleTextField(lastNameTextField)
+//        Utilities.styleTextField(emailTextField)
+//        Utilities.styleTextField(hometownTextField)
+//        Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
     }
     

@@ -21,6 +21,12 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
+        setUpElements()
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
         
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -41,22 +47,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        setUpElements()
-    }
-    
-    func setUpElements() {
-        // hide error label
-        errorLabel.alpha = 0;
-        
-        // Style the elements
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(loginButton)
-    }
-    
     func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
@@ -70,5 +60,15 @@ class LoginViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
         
+    }
+
+    func setUpElements() {
+        // hide error label
+        errorLabel.alpha = 0;
+        
+        // Style the elements
+//        Utilities.styleTextField(emailTextField)
+//        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
     }
 }

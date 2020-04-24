@@ -30,8 +30,31 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBOutlet weak var dogProfileImageView: UIImageView!
   
+    override func viewDidLoad() {
+           super.viewDidLoad()
+           errorLabel.alpha = 0
+           
+           /// fills picker withh options
+           sizePickerData = ["Small", "Medium", "Large"]
+           genderPickerData = ["Male", "Female"]
+           
+           self.sizePicker.delegate = self
+           self.sizePicker.dataSource = self
+           self.genderPicker.delegate = self
+           self.genderPicker.dataSource = self
+           
+           /// sets textfields to show picker when clicked
+           sizeTF.inputView = sizePicker
+           genderTF.inputView = genderPicker
+           
+           // hides navigation controller
+           self.navigationController?.isNavigationBarHidden = false
+           
+           setUpDogProfile()
+           setUpElements()
+       }
     
-    // picker functions
+    // MARK: Picker functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -86,31 +109,8 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.present(picker, animated:  true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        errorLabel.alpha = 0
-        
-        /// fills picker withh options
-        sizePickerData = ["Small", "Medium", "Large"]
-        genderPickerData = ["Male", "Female"]
-        
-        self.sizePicker.delegate = self
-        self.sizePicker.dataSource = self
-        self.genderPicker.delegate = self
-        self.genderPicker.dataSource = self
-        
-        /// sets textfields to show picker when clicked
-        sizeTF.inputView = sizePicker
-        genderTF.inputView = genderPicker
-        
-        // hides navigation controller
-        self.navigationController?.isNavigationBarHidden = false
-        
-        setUpDogProfile()
-        setUpElements()
-    }
     
-    // segue functions
+    //MARK: Segue functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let suvc = segue.destination as? SignUpViewController {
             suvc.pupNameText = pupNameTF.text
@@ -162,10 +162,10 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func setUpElements() {
-        Utilities.styleTextField(pupNameTF)
-        Utilities.styleTextField(breedTF)
+//        Utilities.styleTextField(pupNameTF)
+//        Utilities.styleTextField(breedTF)
         Utilities.styleFilledButton(nextButton)
-        Utilities.styleTextField(bioTF)
+//        Utilities.styleTextField(bioTF)
     }
 }
 

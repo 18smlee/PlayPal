@@ -10,9 +10,12 @@ import UIKit
 import GeoFire
 
 class HomeViewController: UITabBarController {
+    @IBInspectable var defaultIndex: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectedIndex = defaultIndex
 
         tabBar.barTintColor = UIColor(red: 200/200, green: 200/200, blue: 200/200, alpha: 1)
         self.tabBarController?.selectedIndex = 2
@@ -30,7 +33,6 @@ class HomeViewController: UITabBarController {
         
         let palsController = UINavigationController(rootViewController: PalsViewController())
         palsController.tabBarItem.image = UIImage(named: "pals_icon.png")
-        palsController.tabBarItem.selectedImage = UIImage(named: "selected_pals_icon.png")
     }
 
 }

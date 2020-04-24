@@ -25,7 +25,5 @@ class ViewController: UIViewController {
         Utilities.styleFilledButton(signUpButton)
         Utilities.styleHollowButton(loginButton)
     }
-    
-
 }
 

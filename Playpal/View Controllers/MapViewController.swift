@@ -67,7 +67,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         let location:CLLocation = CLLocation(latitude: CLLocationDegrees(Double(userLat)!), longitude: CLLocationDegrees(Double(userLong)!))
         
-        myQuery = geoFire?.query(at: location, withRadius: 100)
+        myQuery = geoFire?.query(at: location, withRadius: 30)
         
         myQuery?.observe(.keyEntered, with: { (key, location) in
             print("KEY FOUND")
@@ -85,8 +85,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         })
-        let dogParkCoord = CLLocationCoordinate2D(latitude: 40.005011256438635, longitude: -75.2586615706985)
-        let dogPark = UserAnnotation(coordinate: dogParkCoord, pupName_ann: "Haverford Dog Park", dogImageURL_ann: "")
     }
 }
 
@@ -116,7 +114,7 @@ extension MapViewController: MKMapViewDelegate {
         return annotationView
     
     }
-    // This function should not require modification
+
     private func getCalloutLabel(with name: String) -> UILabel {
         let label = UILabel()
         label.text = name

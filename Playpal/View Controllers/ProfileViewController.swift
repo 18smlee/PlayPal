@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var dogProfileImageView: UIImageView!
     
+    @IBOutlet weak var hometownLabel: UILabel!
+    
     @IBOutlet weak var bioView: UITextView!
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class ProfileViewController: UIViewController {
             self.nameLabel.text = user.pupName!
             self.breedLabel.text = user.breed!
             self.infoLabel.text = "\(user.size!) | \(user.gender!)"
+            self.dogProfileImageView.layer.cornerRadius = 8.0
+            self.dogProfileImageView.clipsToBounds = true
             if user.picURL != "" {
                 let url = URL(string: user.picURL)
                 URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
@@ -49,6 +53,7 @@ class ProfileViewController: UIViewController {
                 self.dogProfileImageView.image = UIImage(named: "dog_icon-1.")
             }
             self.bioView.text = user.bio!
+            self.hometownLabel.text = user.hometown!
         }
         
         setUpElements()

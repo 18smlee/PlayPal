@@ -15,7 +15,6 @@ class UserModel {
     static let model = UserModel()
     
     // Firebase references
-    let BASE_REF = Database.database().reference()
     let USER_REF = Database.database().reference().child("users")
     
     var CURRENT_USER_REF: DatabaseReference {
@@ -23,20 +22,11 @@ class UserModel {
         return USER_REF.child("\(id)")
     }
     
-    var CURRENT_USER_FRIENDS_REF: DatabaseReference {
-        return CURRENT_USER_REF.child("friends")
-    }
-    
-    var CURRENT_USER_REQUESTS_REF: DatabaseReference {
-        return CURRENT_USER_REF.child("requests")
-    }
-    
     var CURRENT_USER_ID: String {
         let id = Auth.auth().currentUser!.uid
         return id
     }
-    
-    
+        
     func getCurrentUser(_ completion: @escaping (User) -> Void) {
         CURRENT_USER_REF.observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             let email = snapshot.childSnapshot(forPath: "email").value as! String
@@ -113,7 +103,7 @@ class UserModel {
                update()
            })
        }
-       /** Removes the user observer. This should be done when leaving the view that uses the observer. */
+    
        func removeUserObserver() {
            USER_REF.removeAllObservers()
        }

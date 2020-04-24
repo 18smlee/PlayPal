@@ -14,7 +14,6 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var dogName: UILabel!
     
     func setData(user: User) {
-        print(user.pupName)
         dogName.text = user.pupName
     }
 }
