@@ -234,6 +234,8 @@ PODS:
     - FirebaseAuthInterop (~> 1.1)
     - FirebaseCore (~> 6.6)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GeoFire (4.0.1):
+    - Firebase/Database (~> 6.0)
   - GoogleAppMeasurement (6.4.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -293,6 +295,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
 
 SPEC REPOS:
   trunk:
@@ -320,6 +323,15 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
 
+EXTERNAL SOURCES:
+  GeoFire:
+    :git: https://github.com/firebase/geofire-objc.git
+
+CHECKOUT OPTIONS:
+  GeoFire:
+    :commit: fe13c8d30a6a51dd5e22a109648572bf53414298
+    :git: https://github.com/firebase/geofire-objc.git
+
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -334,6 +346,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: a750487e2019ac35464c78311dcf2fde9d817c52
   FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
   FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
+  GeoFire: 67b5276c561434b4e4c7ea567c2c4d64e711339c
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
   GoogleDataTransport: 6ffa4dd0b6d547f8d27b91bd92fa9e197a3f5f1f
   GoogleDataTransportCCTSupport: 12f02e5c8f09c055615de90bcd5ba2c375546051
@@ -345,6 +358,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 8c33e1a438ae29244bedd742602bcc2c82cbf34b
+PODFILE CHECKSUM: 408d6292e9538d84e6c7e7fb05f72180d3bd7258
 
 COCOAPODS: 1.9.1

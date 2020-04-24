@@ -18,6 +18,7 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var genderPicker = UIPickerView()
     @IBOutlet weak var sizeTF: UITextField!
     @IBOutlet weak var genderTF: UITextField!
+    @IBOutlet weak var bioTF: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -89,6 +90,7 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.viewDidLoad()
         errorLabel.alpha = 0
         
+        /// fills picker withh options
         sizePickerData = ["Small", "Medium", "Large"]
         genderPickerData = ["Male", "Female"]
         
@@ -97,12 +99,10 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.genderPicker.delegate = self
         self.genderPicker.dataSource = self
         
+        /// sets textfields to show picker when clicked
         sizeTF.inputView = sizePicker
         genderTF.inputView = genderPicker
         
-//        customizePicker(textField: sizeTF, picker: sizePicker)
-//        customizePicker(textField: genderTF, picker: genderPicker)
-//
         // hides navigation controller
         self.navigationController?.isNavigationBarHidden = false
         
@@ -117,6 +117,7 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
             suvc.breedText = breedTF.text
             suvc.size = sizeTF.text
             suvc.gender =  genderTF.text
+            suvc.bioText = bioTF.text
             
             // extract image data before sending
             guard let imageSelected = dogProfileImageView.image else {
@@ -143,12 +144,12 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
-    // Checks to make sure all text fields are valid. If correct return nil, else return error message.
     func validateFields() -> String?{
         if pupNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             breedTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             sizeTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            genderTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            genderTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            bioTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             return "Please fill in all fields."
         }
@@ -164,35 +165,11 @@ class DogProfileViewController: UIViewController, UIPickerViewDelegate, UIPicker
         Utilities.styleTextField(pupNameTF)
         Utilities.styleTextField(breedTF)
         Utilities.styleFilledButton(nextButton)
+        Utilities.styleTextField(bioTF)
     }
-    
-//    func customizePicker(textField: UITextField, picker : UIPickerView) {
-//        picker.backgroundColor = .white
-//
-//        picker.showsSelectionIndicator = true
-//        picker.delegate = self
-//        picker.dataSource = self
-//
-//        let toolBar = UIToolbar()
-//        toolBar.barStyle = UIBarStyle.default
-//        toolBar.isTranslucent = true
-//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-//        toolBar.sizeToFit()
-//
-//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("donePicker")))
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//
-//        toolBar.setItems([spaceButton, doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//
-//        textField.inputView = picker
-//        textField.inputAccessoryView = toolBar
-//    }
-//    func donePicker(textField: UITextField) {
-//        textField.resignFirstResponder()
-//    }
 }
 
+// image picker for dog profile image selection
 extension DogProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GeoFire
 
 class HomeViewController: UITabBarController {
 
@@ -14,7 +15,7 @@ class HomeViewController: UITabBarController {
         super.viewDidLoad()
 
         tabBar.barTintColor = UIColor(red: 200/200, green: 200/200, blue: 200/200, alpha: 1)
-        self.tabBarController?.selectedIndex = 1
+        self.tabBarController?.selectedIndex = 2
         
     }
     

@@ -13,6 +13,8 @@
 		8E5664B2244FE5A200D19443 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5664B1244FE5A200D19443 /* ProfileViewController.swift */; };
 		8E5664B4244FFAA000D19443 /* PalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5664B3244FFAA000D19443 /* PalsViewController.swift */; };
 		8E6C3C0B244D305400D8E853 /* DogProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6C3C0A244D305400D8E853 /* DogProfileViewController.swift */; };
+		8E719F5024526D8000F1F018 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E719F4F24526D8000F1F018 /* UserCell.swift */; };
+		8E719F522452865E00F1F018 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E719F512452865E00F1F018 /* UserAnnotation.swift */; };
 		8E82348C2450E69C005FF7A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E82348B2450E69C005FF7A7 /* CoreLocation.framework */; };
 		8E8E3829244766C70028142C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E3828244766C70028142C /* SignUpViewController.swift */; };
 		8E8E382B244766DB0028142C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E382A244766DB0028142C /* LoginViewController.swift */; };
@@ -62,6 +64,8 @@
 		8E5664B1244FE5A200D19443 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E5664B3244FFAA000D19443 /* PalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalsViewController.swift; sourceTree = "<group>"; };
 		8E6C3C0A244D305400D8E853 /* DogProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogProfileViewController.swift; sourceTree = "<group>"; };
+		8E719F4F24526D8000F1F018 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		8E719F512452865E00F1F018 /* UserAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
 		8E82348B2450E69C005FF7A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E8E3828244766C70028142C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E8E382A244766DB0028142C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				8E5664AF244FE58B00D19443 /* MapViewController.swift */,
 				8E5664B1244FE5A200D19443 /* ProfileViewController.swift */,
 				8E5664B3244FFAA000D19443 /* PalsViewController.swift */,
+				8E719F4F24526D8000F1F018 /* UserCell.swift */,
+				8E719F512452865E00F1F018 /* UserAnnotation.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -476,6 +482,8 @@
 				8E5664B0244FE58B00D19443 /* MapViewController.swift in Sources */,
 				8EDCC36E24477D2100FB7513 /* constants.swift in Sources */,
 				8E6C3C0B244D305400D8E853 /* DogProfileViewController.swift in Sources */,
+				8E719F5024526D8000F1F018 /* UserCell.swift in Sources */,
+				8E719F522452865E00F1F018 /* UserAnnotation.swift in Sources */,
 				8EDB789D2451E42D001AC9E3 /* UserModel.swift in Sources */,
 				8E5664B2244FE5A200D19443 /* ProfileViewController.swift in Sources */,
 				8E8E382B244766DB0028142C /* LoginViewController.swift in Sources */,

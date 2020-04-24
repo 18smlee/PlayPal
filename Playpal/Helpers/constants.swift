@@ -16,5 +16,6 @@ struct Constants {
         static let signUpViewController = "SignUpVC"
         static let viewController =
         "StartVC"
+        static let otherProfileViewController = "OtherProfileVC"
     }
 }

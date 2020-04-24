@@ -10,8 +10,10 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseStorage
+import CoreLocation
+import GeoFire
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, CLLocationManagerDelegate {
     
     // owner info
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -28,8 +30,8 @@ class SignUpViewController: UIViewController {
     var size: String?
     var gender: String?
     var dogImageData: Data?
-    var dogImageURL: URL?
-    
+    var dogImageURL: String? = ""
+    var bioText: String?
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -37,11 +39,31 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    // variables for storing and updating user location
+    private let manager = CLLocationManager()
+    var geoFireRef: DatabaseReference?
+    var geoFire: GeoFire?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Adds locations to database
+        configureLocationManager()
+        geoFireRef = Database.database().reference().child("Geolocs")
+        geoFire = GeoFire(firebaseRef: geoFireRef!)
+        
+        
         self.navigationController?.isNavigationBarHidden = false
         setUpElements()
+    }
+    
+    private func configureLocationManager(){
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.pausesLocationUpdatesAutomatically = false
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
@@ -62,6 +84,11 @@ class SignUpViewController: UIViewController {
             let hometown = hometownTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let pupName = pupNameText?.trimmingCharacters(in: .whitespacesAndNewlines)
             let breed = breedText?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let bio = bioText?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Gets user's current location
+            let userLat = UserDefaults.standard.value(forKey: "current_latitude") as! String
+            let userLong = UserDefaults.standard.value(forKey: "current_longitude") as! String
             
             // Create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -71,18 +98,56 @@ class SignUpViewController: UIViewController {
                     self.showError(error?.localizedDescription ?? "Error creating user")
                     
                 } else {
-                    self.uploadDogProfileImage(dogImageData: self.dogImageData)
                     
-                    // fills database with user info
-                    UserModel.model.sendUserInfo(email, firstName, lastName, hometown, pupName, breed, self.size, self.gender)
+                    self.uploadDogProfileImage(dogImageData: self.dogImageData) { (doneUploading) in
+                        // fills database with user info
+                        UserModel.model.sendUserInfo(email, firstName, lastName, hometown, pupName, breed, self.size, self.gender, self.dogImageURL, bio: bio)
+                        
+                        // adds location to database
+                        let location:CLLocation = CLLocation(latitude: CLLocationDegrees(Double(userLat)!), longitude: CLLocationDegrees(Double(userLong)!))
+                        self.geoFire?.setLocation(location, forKey:Auth.auth().currentUser?.uid ?? "")
+                        
+                        self.transitionToHome()
+                    }
                     
-                    self.transitionToHome()
                 }
             }
         }
     }
     
-    func uploadDogProfileImage(dogImageData: Data?) {
+    
+    //MARK: LocationManager Delegate Methods
+    
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if (status == .authorizedAlways) || (status == .authorizedWhenInUse)
+        {
+            manager.startUpdatingLocation()
+        }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+        print("Location Error:\(error.localizedDescription)")
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let updatedLocation:CLLocation = locations.first!
+        
+        let newCoordinate: CLLocationCoordinate2D = updatedLocation.coordinate
+        
+        let usrDefaults:UserDefaults = UserDefaults.standard
+        
+        usrDefaults.set("\(newCoordinate.latitude)", forKey: "current_latitude")
+        usrDefaults.set("\(newCoordinate.longitude)", forKey: "current_longitude")
+        usrDefaults.synchronize()
+    }
+    
+    
+    
+    // uploads chosen picture to Firebase Storage and stores URL in database
+    func uploadDogProfileImage(dogImageData: Data?, doneUploading: (Bool) -> Void) {
         
         guard let uid = Auth.auth().currentUser?.uid else {
             return
@@ -94,16 +159,11 @@ class SignUpViewController: UIViewController {
         metadata.contentType = "image/jpg"
         
         storageRef.putData(self.dogImageData!, metadata: metadata) {(metadata, error) in
+            
             if error == nil, metadata != nil {
                 storageRef.downloadURL(completion: { (url, error) in
                     if let metaImageURL = url {
-                        self.dogImageURL = metaImageURL
-                        print("-------")
-                        print(self.dogImageURL?.absoluteString)
-                        print("-------")
-                    } else {
-                        print("dogImageURL not set!")
-                        print(url)
+                        Database.database().reference().child("users").child(UserModel.model.CURRENT_USER_ID).child("picURL").setValue(metaImageURL.absoluteString)
                     }
                 })
             } else {
@@ -111,6 +171,7 @@ class SignUpViewController: UIViewController {
                 print(error?.localizedDescription)
             }
         }
+        doneUploading(true)
         
     }
     
@@ -161,6 +222,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(firstNameTextField)
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(hometownTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
     }

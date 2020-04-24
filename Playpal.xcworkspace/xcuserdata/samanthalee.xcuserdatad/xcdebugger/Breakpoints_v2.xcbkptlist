@@ -14,22 +14,6 @@
             filePath = "Playpal/View Controllers/DogProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "nextTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E66ADF2E-86C9-487D-A71D-4E4B39B114CC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Playpal/View Controllers/DogProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
             endingLineNumber = "138"
             landmarkName = "nextTapped(_:)"
@@ -46,10 +30,10 @@
             filePath = "Playpal/View Controllers/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "setUpNavBar()"
-            landmarkType = "7">
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,9 +46,9 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "uploadDogProfileImage(dogImageData:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "uploadDogProfileImage(dogImageData:doneUploading:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +62,9 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "uploadDogProfileImage(dogImageData:)"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "uploadDogProfileImage(dogImageData:doneUploading:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +78,25 @@
             filePath = "Playpal/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "uploadDogProfileImage(dogImageData:)"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "uploadDogProfileImage(dogImageData:doneUploading:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68A92EF0-566B-405F-ADE0-279C6DDC5B5F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Playpal/View Controllers/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

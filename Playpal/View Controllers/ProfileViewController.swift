@@ -10,20 +10,53 @@ import UIKit
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
     @IBOutlet weak var logoutButton: UIButton!
     
     @IBOutlet weak var dogProfileLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var breedLabel: UILabel!
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var dogProfileImageView: UIImageView!
+    
+    @IBOutlet weak var bioView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UserModel.model.getCurrentUser { (user) in
-            self.dogProfileLabel.text = "\(user.pupName)'s Profile"
+            self.dogProfileLabel.text = "\(user.pupName!)'s Profile"
+            self.nameLabel.text = user.pupName!
+            self.breedLabel.text = user.breed!
+            self.infoLabel.text = "\(user.size!) | \(user.gender!)"
+            if user.picURL != "" {
+                let url = URL(string: user.picURL)
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                    
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.dogProfileImageView.image = UIImage(data: data!)
+                    }
+                }).resume()
+            } else {
+                self.dogProfileImageView.image = UIImage(named: "dog_icon-1.")
+            }
+            self.bioView.text = user.bio!
         }
         
-        setUpElements()    }
+        setUpElements()
+        
+    }
     
-
+    
+    // log out functions
     @IBAction func logout(_ sender: Any) {
         try! Auth.auth().signOut()
         transitionToStart()

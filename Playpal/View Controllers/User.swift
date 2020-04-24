@@ -20,8 +20,10 @@ class User {
     var breed: String!
     var size: String!
     var gender: String!
+    var picURL: String!
+    var bio: String!
     
-    init(userEmail: String, userID: String, userFirstName: String, userLastName: String, userHometown: String, userPupName: String, userBreed: String, userSize: String, userGender: String) {
+    init(userEmail: String, userID: String, userFirstName: String, userLastName: String, userHometown: String, userPupName: String, userBreed: String, userSize: String, userGender: String, userPicURL: String, userBio: String) {
            
            self.email = userEmail
            self.id = userID
@@ -33,6 +35,8 @@ class User {
            self.breed = userBreed
            self.size = userSize
            self.gender = userGender
+           self.picURL = userPicURL
+           self.bio = userBio
            
        }
     

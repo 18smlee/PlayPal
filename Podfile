@@ -11,6 +11,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
+pod 'GeoFire', :git=> 'https://github.com/firebase/geofire-objc.git'
 
 
   target 'PlaypalTests' do
